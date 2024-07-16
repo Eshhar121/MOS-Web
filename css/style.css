@@ -1,0 +1,54 @@
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(205, 75, 39) !important;
+    padding: 1px;
+}
+
+.form-control{
+    background-color: #F1D1A9;
+    padding: .375rem 2rem;
+    font-size: 1.5rem;
+}
+.navbar-text{
+    color: #F1D1A9;
+    font-size: 2.5rem;
+}
+
+body{
+    font-family: "Chela One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #E0937D;
+}
+
+.sidebar {
+    width: 85px;
+    height: 100vh;
+    background-color: rgb(205, 75, 39);
+    box-sizing: border-box;
+    position: fixed;
+}
+  
+.sidebar a {
+    display: block;
+    color: #F1D1A9;
+    text-decoration: none;
+    padding: 17px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+@media(max-width: 600px){
+    .navbar-text{
+        display: none;
+    }
+    .navbar-brand{
+        display: none;
+    }
+}
+
+@media(min-width: 700px){
+    .form-control{
+        width: 400px;
+    }
+}
