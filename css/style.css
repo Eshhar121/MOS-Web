@@ -38,6 +38,16 @@ body{
     transition: background-color 0.3s;
 }
 
+.b{
+    background-color: rgb(205, 75, 39);
+    color: #F1D1A9;
+    border: 0px;
+}
+
+.b:hover{
+    background-color: rgb(196, 53, 13);
+}
+
 @media(max-width: 600px){
     .navbar-text{
         display: none;
