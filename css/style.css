@@ -9,6 +9,7 @@
     padding: .375rem 2rem;
     font-size: 1.5rem;
 }
+
 .navbar-text{
     color: #F1D1A9;
     font-size: 2.5rem;
@@ -21,15 +22,15 @@ body{
     background-color: #E0937D;
 }
 
-.sidebar {
+.side {
     width: 85px;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(205, 75, 39);
-    box-sizing: border-box;
+    overflow: auto;
     position: fixed;
 }
   
-.sidebar a {
+.side a {
     display: block;
     color: #F1D1A9;
     text-decoration: none;
@@ -38,8 +39,12 @@ body{
     transition: background-color 0.3s;
 }
 
+.side a.active{
+    background-color: #a43c1f;
+}
+
 .b{
-    background-color: rgb(205, 75, 39);
+    background-color: #cd4b27;
     color: #F1D1A9;
     border: 0px;
 }
@@ -48,10 +53,52 @@ body{
     background-color: rgb(196, 53, 13);
 }
 
+.card{
+    background-color: #cd4b27;
+    color: #F1D1A9;
+}
+
+.card-text{
+    outline: #a43c1f;
+}
+
+.table{
+    width: 85%;
+    margin-left: 130px;
+    border-color: #672614;
+}
+
+.table td{
+    color: #672614;
+    background-color: #E0937D;
+}
+
+.table th{
+    background-color: #E0937D;
+}
+
 @media(max-width: 600px){
     .navbar-text{
         display: none;
     }
+    .side{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }.side a{
+        float: left;
+    }
+    .form-control{
+        margin-top: 10px;
+    }
+    .table{
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 80%;
+    }
+}
+
+@media(max-width:500px){
     .navbar-brand{
         display: none;
     }
