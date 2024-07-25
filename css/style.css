@@ -133,6 +133,9 @@ th:hover .remove{
     .navbar-brand{
         display: none;
     }
+    .c{
+        margin-left: 0px;
+    }
 }
 
 @media(min-width: 700px){
