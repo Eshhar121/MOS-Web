@@ -19,7 +19,7 @@ body{
     font-family: "Chela One", system-ui;
     font-weight: 400;
     font-style: normal;
-    background-color: #E0937D;
+    background-color: #cd4b27;
 }
 
 .side {
@@ -40,7 +40,8 @@ body{
 }
 
 .side a.active{
-    background-color: #a43c1f;
+    background-color: #E0937D;
+    border-radius: 100%;
 }
 
 .b{
@@ -55,7 +56,7 @@ body{
 
 .card{
     background-color: #cd4b27;
-    color: #F1D1A9;
+    color: #531200;
 }
 
 .card-text{
@@ -64,7 +65,7 @@ body{
 
 .table{
     width: 85%;
-    margin-left: 130px;
+    margin-left: 50px;
     border-color: #672614;
 }
 
@@ -105,6 +106,29 @@ th:hover .remove{
     color: #cd4b27;
 }
 
+.addtocart{
+    color: #E0937D;
+}
+
+.container-fluat{
+    margin-left: 85px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    margin-top: 0px;
+    background-color: #E0937D;
+}
+
+.custom-select{
+    background-color: #F1D1A9;
+    height: 40px;
+}
+
+.btn-primary{
+    background-color: #cd4b27;
+    color: #F1D1A9;
+}
+
+
 @media(max-width: 600px){
     .navbar-text{
         display: none;
@@ -113,8 +137,12 @@ th:hover .remove{
         width: 100%;
         height: auto;
         position: relative;
-    }.side a{
+    }
+    .side a{
         float: left;
+    }
+    .container-fluat{
+        margin-left: 12px;
     }
     .form-control{
         margin-top: 10px;
