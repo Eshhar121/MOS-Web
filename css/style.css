@@ -77,12 +77,32 @@ body{
     background-color: #E0937D;
 }
 
+.remove {
+    display: none;
+    color: #cd4b27;
+}
+
+th:hover .add{
+    display: none;
+}
+
+th:hover .remove{
+    display: inline;
+}
+
 .mb-4 a{
     color: #672614;
     margin-left: 4%;
 }
 .ms-5 a:hover{
     color: #F1D1A9;
+}
+
+.btn{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 0px;
+    color: #cd4b27;
 }
 
 @media(max-width: 600px){
