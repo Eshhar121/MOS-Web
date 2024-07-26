@@ -8,11 +8,7 @@
     background-color: #F1D1A9;
     padding: .375rem 2rem;
     font-size: 1.5rem;
-    
-}
-
-input::placeholder{
-    opacity: 1;
+    border: 0px;
 }
 
 .navbar-text{
@@ -61,16 +57,22 @@ body{
 
 .card{
     background-color: #cd4b27;
-    color: #531200;
+    color: #F1D1A9;
+    border: #672614;
 }
 
-.card-text{
-    outline: #a43c1f;
+.card img{
+    margin: 1px;
+    width: auto;
+}
+
+.addtocart:hover{
+    filter: saturate(500%);
 }
 
 .table{
     width: 85%;
-    margin-left: 80px;
+    margin-left: 50px;
     margin-bottom: 0px;
     border-color: #672614;
 }
@@ -139,6 +141,9 @@ th:hover .remove{
     .navbar-text{
         display: none;
     }
+    .d-flex{
+        padding-right: 0px;
+    }
     .side{
         width: 100%;
         height: auto;
@@ -146,16 +151,17 @@ th:hover .remove{
     }
     .side a{
         float: left;
+        margin-top: 12px;
     }
     .container-fluat{
         margin-left: 12px;
     }
     .form-control{
-        margin-top: 10px;
+        margin-top: 12px;
     }
     .table{
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
         width: 80%;
     }
     .mb-4 a{
