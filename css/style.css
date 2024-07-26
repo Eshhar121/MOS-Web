@@ -8,6 +8,11 @@
     background-color: #F1D1A9;
     padding: .375rem 2rem;
     font-size: 1.5rem;
+    
+}
+
+input::placeholder{
+    opacity: 1;
 }
 
 .navbar-text{
@@ -34,9 +39,9 @@ body{
     display: block;
     color: #F1D1A9;
     text-decoration: none;
-    padding: 17px;
+    padding: 12px;
     margin-bottom: 10px;
-    transition: background-color 0.3s;
+    margin-left: 10px;
 }
 
 .side a.active{
@@ -112,7 +117,7 @@ th:hover .remove{
 }
 
 .container-fluat{
-    margin-left: 85px;
+    margin-left: 97px;
     margin-right: 12px;
     margin-bottom: 12px;
     margin-top: 0px;
