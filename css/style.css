@@ -66,6 +66,7 @@ body{
 .table{
     width: 85%;
     margin-left: 50px;
+    margin-bottom: 0px;
     border-color: #672614;
 }
 
