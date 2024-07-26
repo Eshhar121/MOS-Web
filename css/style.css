@@ -156,7 +156,7 @@ th:hover .remove{
     .container-fluat{
         margin-left: 12px;
     }
-    .form-control{
+    .d-flex{
         margin-top: 12px;
     }
     .table{
@@ -166,6 +166,9 @@ th:hover .remove{
     }
     .mb-4 a{
         margin-left: 0%;
+    }
+    .card{
+        margin-bottom: 12px;
     }
 }
 
