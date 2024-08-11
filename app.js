@@ -63,7 +63,7 @@ function foodcategoryburger(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -73,7 +73,7 @@ function foodcategoryburger(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0" onclick="addtocart()"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0" onclick="addtocart()"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -93,7 +93,7 @@ function foodcategorysubmarines(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -103,7 +103,7 @@ function foodcategorysubmarines(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button  onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -123,7 +123,7 @@ function foodcategoryfries(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -133,7 +133,7 @@ function foodcategoryfries(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -153,7 +153,7 @@ function foodcategorypasta(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -163,7 +163,7 @@ function foodcategorypasta(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -183,7 +183,7 @@ function foodcategorychicken(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -193,7 +193,7 @@ function foodcategorychicken(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -213,7 +213,7 @@ function foodcategorybeverages(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class = "card-text">$${food[i].price}</p>
             </div>
             </div>
@@ -223,7 +223,7 @@ function foodcategorybeverages(){
             <div class="card h-10 rounded-5 mb-4">
             <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
             <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
+                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
                 <p class="card-text">$${food[i].price}</p>
                 <p>${food[i].discount}off!</p>
             </div>
@@ -231,5 +231,39 @@ function foodcategorybeverages(){
         </div>`
         }
     }
-    card.innerHTML = cardbody;
+    card.innerHTML = cardbody ;
+}
+
+let cartbody= "";
+
+function addtocart(i) {
+    cart.push(food[i]); 
+    let carttable = document.getElementById("carttable");
+
+    cartbody += `<tr>
+              <th scope="row"><span onclick="removefromcart()" class="remove">-</span><span id="rownumber" class="add">${cart.length}</span></th>
+              <td>${food[i].name}</td>
+              <td>1x</td>
+              <td>$${food[i].price}</td>
+            </tr>`
+            
+    carttable.innerHTML = cartbody ;
+}
+
+function removefromcart() {
+    let rownumber = document.getElementById("rownumber").value;
+    cart.splice(food[rownumber-1]);
+    cartbody = "";
+    let carttable = document.getElementById("carttable");
+
+    cart.forEach(data => {
+        cartbody += `<tr>
+              <th scope="row"><span onclick="removefromcart()" class="remove">-</span><span id="rownumber" class="add">1</span></th>
+              <td>${data.name}</td>
+              <td>1x</td>
+              <td>$100</td>
+            </tr>`
+    });
+
+    carttable.innerHTML = cartbody ;
 }
