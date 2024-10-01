@@ -1,168 +1,63 @@
-.bg-body-tertiary {
+.navbar {
     --bs-bg-opacity: 1;
-    background-color: rgb(205, 75, 39) !important;
-    padding: 1px;
+    background-color: #EAB543 !important;
 }
 
 .form-control{
-    background-color: #F1D1A9;
-    padding: .375rem 2rem;
-    font-size: 1.5rem;
-    border: 0px;
+    background-color: #F8EFBA;
+    padding-left: 20px;
 }
 
-.navbar-text{
-    color: #F1D1A9;
-    font-size: 2.5rem;
+.navbar-brand{
+    color: #fffcf8;
+    font-size: 2rem;
 }
 
 body{
-    font-family: "Chela One", system-ui;
+    font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-style: normal;
-    background-color: #cd4b27;
-}
-
-.side {
-    width: 85px;
-    height: 100%;
-    background-color: rgb(205, 75, 39);
-    overflow: auto;
-    position: absolute;
-}
-  
-.side a {
-    display: block;
-    color: #F1D1A9;
-    text-decoration: none;
-    padding: 12px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-
-.side a.active{
-    background-color: #E0937D;
-    border-radius: 100%;
+    background-color: #EAB543;
 }
 
 .b{
-    background-color: #cd4b27;
-    color: #F1D1A9;
+    background-color: #995907;
+    color: #F8EFBA;
     border: 0px;
 }
 
 .b:hover{
-    background-color: rgb(196, 53, 13);
-}
-
-.card{
-    background-color: #cd4b27;
-    color: #F1D1A9;
-    border: #672614;
-}
-
-.card img{
-    margin: 1px;
-    width: auto;
-}
-
-.addtocart:hover{
-    filter: saturate(500%);
-}
-
-.table{
-    width: 85%;
-    margin-left: 50px;
-    margin-bottom: 0px;
-    border-color: #672614;
-}
-
-.table td{
-    color: #672614;
-    background-color: #E0937D;
-}
-
-.table th{
-    background-color: #E0937D;
-}
-
-.remove {
-    display: none;
-    color: #cd4b27;
-}
-
-th:hover .add{
-    display: none;
-}
-
-th:hover .remove{
-    display: inline;
+    background-color: rgb(61, 27, 4);
 }
 
 .mb-4 a{
-    color: #672614;
+    color: #4d2121;
     margin-left: 4%;
 }
+
 .ms-5 a:hover{
     color: #F1D1A9;
 }
 
 .btn{
-    padding-top: 0px;
-    padding-bottom: 0px;
     border: 0px;
-    color: #cd4b27;
 }
 
 .addtocart{
-    color: #E0937D;
+    color: #4d4c4b;
 }
 
 .container-fluat{
-    margin-left: 97px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    margin-top: 0px;
-    background-color: #E0937D;
+    margin: 1%;
+    background-color: #F8EFBA;
 }
-
-.custom-select{
-    background-color: #F1D1A9;
-    height: 40px;
-}
-
-.btn-primary{
-    background-color: #cd4b27;
-    color: #F1D1A9;
-}
-
-
 @media(max-width: 600px){
-    .navbar-text{
+    .navbar-brand{
         display: none;
     }
     .d-flex{
         padding-right: 0px;
-    }
-    .side{
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .side a{
-        float: left;
         margin-top: 12px;
-    }
-    .container-fluat{
-        margin-left: 12px;
-    }
-    .d-flex{
-        margin-top: 12px;
-    }
-    .table{
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 80%;
     }
     .mb-4 a{
         margin-left: 0%;
@@ -173,9 +68,6 @@ th:hover .remove{
 }
 
 @media(max-width:500px){
-    .navbar-brand{
-        display: none;
-    }
     .c{
         margin-left: 0px;
     }
@@ -186,5 +78,3 @@ th:hover .remove{
         width: 400px;
     }
 }
-
-

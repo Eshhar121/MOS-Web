@@ -52,218 +52,308 @@ const food = [
     {code:"B1047", name:"Mirinda (330ml)", price:850, discount:7},
 ]
 
+let table = document.getElementById("table");
+
 const cart = []
 
+const order = []
+
+const customer = []
+
 function foodcategoryburger(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 0; i < 14; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0" onclick="addtocart()"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
 
 function foodcategorysubmarines(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 14; i < 23; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button  onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
 
 function foodcategoryfries(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 23; i < 29; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
 
 function foodcategorypasta(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let table = document.getElementById("table");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 29; i < 36; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
 
 function foodcategorychicken(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let table = document.getElementById("table");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 36; i < 42; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
 
 function foodcategorybeverages(){
-    let cardbody = "";
-    let card = document.getElementById("card");
+    let table = document.getElementById("table");
+    let tablebody = `<thead>
+                        <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
     for(let i = 42; i < 46; i++){
-        if (food[i].discount == null) {
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class = "card-title">${food[i].name}<button onclick = "addtocart(${i})" class = "addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class = "card-text">$${food[i].price}</p>
-            </div>
-            </div>
-        </div>`
-        }else{
-            cardbody += `<div class="col">
-            <div class="card h-10 rounded-5 mb-4">
-            <img src="img/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg" class="card-img-top rounded-5">
-            <div class="card-body">
-                <h4 class="card-title">${food[i].name}<button onclick = "addtocart(${i})" class="addtocart btn ms-4 me-0"><img class="w-50 me-0" src="img/Sidebar/add-to-cart.png"></button></h4>
-                <p class="card-text">$${food[i].price}</p>
-                <p>${food[i].discount}off!</p>
-            </div>
-            </div>
-        </div>`
-        }
+        tablebody += `<tr ondblclick= "addtocart(${i})">
+                        <td>${food[i].code}</td>
+                        <td>${food[i].name}</td>
+                        <td>${food[i].price}/=</td>
+                        <td>${food[i].discount==null?`--`:food[i].discount+"%"}</td>
+                    </tr>`
     }
-    card.innerHTML = cardbody ;
+    tablebody += `</tbody>`
+    table.innerHTML = tablebody;
 }
-
-let cartbody= "";
 
 function addtocart(i) {
-    cart.push(food[i]); 
+    if (selectedqty(i)){
+        cart.push({
+            name : food[i].name,
+            price : food[i].price,
+            qty : 1,
+            total : (1*food[i].price)*(food[i].discount == null ? 1 : ((100-food[i].discount)/100))
+        })
+    }
     let carttable = document.getElementById("carttable");
-
-    cartbody += `<tr>
-              <th scope="row"><span onclick="removefromcart()" class="remove">-</span><span id="rownumber" class="add">${cart.length}</span></th>
-              <td>${food[i].name}</td>
-              <td>1x</td>
-              <td>$${food[i].price}</td>
-            </tr>`
-            
-    carttable.innerHTML = cartbody ;
+    let total = document.getElementById("total");
+    let cartt = `<thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
+    for (let i = 0; i < cart.length; i++) {
+        cartt += `<tr ondblclick = "removefromcart(${i})">
+                        <td>${cart[i].name}</td>
+                        <td>${cart[i].price}</td>
+                        <td>${cart[i].qty}</td>
+                        <td>${cart[i].total}</td>
+                    </tr>`
+    }
+    cartt += `</tbody>`
+    carttable.innerHTML = cartt
+    total.innerHTML = `total -: `+gettotal()+`LKR`;
 }
 
-function removefromcart() {
-    let rownumber = document.getElementById("rownumber").value;
-    cart.splice(food[rownumber-1]);
-    cartbody = "";
-    let carttable = document.getElementById("carttable");
-
-    cart.forEach(data => {
-        cartbody += `<tr>
-              <th scope="row"><span onclick="removefromcart()" class="remove">-</span><span id="rownumber" class="add">1</span></th>
-              <td>${data.name}</td>
-              <td>1x</td>
-              <td>$100</td>
-            </tr>`
+function selectedqty(i){
+    var bool = true
+    cart.forEach(element => {
+        if (food[i].name == element.name) {
+            element.qty++;
+            element.total*=2;
+            bool = false
+        }
     });
+    return bool;
+}
 
-    carttable.innerHTML = cartbody ;
+function gettotal(){
+    let total = 0;
+    cart.forEach(element =>{
+        total += element.total;
+    });
+    return total;
+}
+
+function searchfood(){
+    let foodname = document.getElementById("foodname").value;
+    
+
+    for(let i = 0; i < food.length; i++){
+        if (food[i].name == foodname) {
+            let tablebody = `<thead>
+                                <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Discount</th>
+                                </tr>
+                            </thead>
+                        <tbody = "table-group-divider">
+                            <tr ondblclick= "addtocart(${i})">
+                                <td>${food[i].code}</td>
+                                <td>${food[i].name}</td>
+                                <td>${food[i].price}</td>
+                                <td>${food[i].discount==null?`--`:food[i].discount}</td>
+                            </tr>
+                        </tbody>`
+                        table.innerHTML = tablebody;
+        }
+    }
+}
+
+function removefromcart(element) {
+    if (cart[element].qty>1) {
+        cart[element].qty--;
+    }else {
+        cart.splice(element,1)
+    }
+    let carttable = document.getElementById("carttable");
+    let total = document.getElementById("total");
+    let cartt = `<thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
+    for (let i = 0; i < cart.length; i++) {
+        cartt += `<tr ondblclick = "removefromcart(${i})">
+                        <td>${cart[i].name}</td>
+                        <td>${cart[i].price}</td>
+                        <td>${cart[i].qty}</td>
+                        <td>${cart[i].total}</td>
+                    </tr>`
+    }
+    cartt += `</tbody>`
+    carttable.innerHTML = cartt
+    total.innerHTML = `total -: `+gettotal()+`LKR`;
+}
+
+function placeorder() {
+    addcustomer()
+}
+
+function addcustomer() {
+    if (customer.length == 0 || document.getElementById("contact").value != customer[customer.length-1].contact) {
+        customer.push({
+            contact : document.getElementById("contact").value, 
+            name: document.getElementById("name").value, 
+            age : document.getElementById("age").value,
+            address : document.getElementById("address").value
+        })  
+    } 
+
+    loadcustomertable()
+}
+
+function removefromcustomer(element){
+    customer.splice(element,1)
+    loadcustomertable()
+}
+
+function loadcustomertable(){
+    let customertable = document.getElementById("customertable");
+    let customerbody = `<thead>
+                        <tr>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
+    for (let i = 0; i < customer.length; i++) {
+        customerbody += `<tr onclick = "addcustomerdetails(${i})" ondblclick = "removefromcustomer(${i})">
+                        <td>${customer[i].contact}</td>
+                        <td>${customer[i].name}</td>
+                        <td>${customer[i].age}</td>
+                        <td>${customer[i].address}</td>
+                    </tr>`
+    }
+    customerbody += `</tbody>`
+    customertable.innerHTML = customerbody
+}
+
+function addcustomerdetails(element) {
+    document.getElementById("addcustomerbtn").innerHTML = ""
+    document.getElementById("contact").value = customer[element].contact
+    document.getElementById("name").value = customer[element].name
+    document.getElementById("age").value = customer[element].age
+    document.getElementById("address").value = customer[element].address
 }
