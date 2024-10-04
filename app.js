@@ -60,6 +60,8 @@ const order = []
 
 const customer = []
 
+//define food categories
+
 function foodcategoryburger(){
     let tablebody = `<thead>
                         <tr>
@@ -195,6 +197,36 @@ function foodcategorybeverages(){
     table.innerHTML = tablebody;
 }
 
+//search items
+function searchfood(){
+    let foodname = document.getElementById("foodname").value;
+
+    for(let i = 0; i < food.length; i++){
+        if (food[i].name == foodname) {
+            let tablebody = `<thead>
+                                <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Discount</th>
+                                </tr>
+                            </thead>
+                        <tbody = "table-group-divider">
+                            <tr ondblclick= "addtocart(${i})">
+                                <td>${food[i].code}</td>
+                                <td>${food[i].name}</td>
+                                <td>${food[i].price}</td>
+                                <td>${food[i].discount == null ? `--` : food[i].discount}</td>
+                            </tr>
+                        </tbody>`
+                        table.innerHTML = tablebody;
+        }
+    }
+}
+
+
+//cart management
+
 function addtocart(i) {
     if (selectedqty(i)){
         cart.push({
@@ -204,28 +236,7 @@ function addtocart(i) {
             total : (1*food[i].price)*(food[i].discount == null ? 1 : ((100-food[i].discount)/100))
         })
     }
-    let carttable = document.getElementById("carttable");
-    let total = document.getElementById("total");
-    let cartt = `<thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody = "table-group-divider">`;
-    for (let i = 0; i < cart.length; i++) {
-        cartt += `<tr ondblclick = "removefromcart(${i})">
-                        <td>${cart[i].name}</td>
-                        <td>${cart[i].price}</td>
-                        <td>${cart[i].qty}</td>
-                        <td>${cart[i].total}</td>
-                    </tr>`
-    }
-    cartt += `</tbody>`
-    carttable.innerHTML = cartt
-    total.innerHTML = `total -: `+gettotal()+`LKR`;
+    loadcart()
 }
 
 function selectedqty(i){
@@ -247,40 +258,17 @@ function gettotal(){
     });
     return total;
 }
-
-function searchfood(){
-    let foodname = document.getElementById("foodname").value;
-    
-
-    for(let i = 0; i < food.length; i++){
-        if (food[i].name == foodname) {
-            let tablebody = `<thead>
-                                <tr>
-                                <th scope="col">Code</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Discount</th>
-                                </tr>
-                            </thead>
-                        <tbody = "table-group-divider">
-                            <tr ondblclick= "addtocart(${i})">
-                                <td>${food[i].code}</td>
-                                <td>${food[i].name}</td>
-                                <td>${food[i].price}</td>
-                                <td>${food[i].discount==null?`--`:food[i].discount}</td>
-                            </tr>
-                        </tbody>`
-                        table.innerHTML = tablebody;
-        }
-    }
-}
-
 function removefromcart(element) {
     if (cart[element].qty>1) {
         cart[element].qty--;
     }else {
         cart.splice(element,1)
     }
+
+    loadcart()
+}
+
+function loadcart(){
     let carttable = document.getElementById("carttable");
     let total = document.getElementById("total");
     let cartt = `<thead>
@@ -304,6 +292,74 @@ function removefromcart(element) {
     carttable.innerHTML = cartt
     total.innerHTML = `total -: `+gettotal()+`LKR`;
 }
+
+//order manegement
+
+function placeorder() {
+    if (customer.length == 0 || iscontactexist(document.getElementById("contactatorder").value)) {
+        customer.push({
+            contact : document.getElementById("contactatorder").value, 
+            name: document.getElementById("nameatorder").value, 
+            age : document.getElementById("ageatorder").value,
+            address : document.getElementById("addressatorder").value,
+            order : order.length+1
+        })  
+    } else{
+        customer.forEach(element=>{
+            if (element.contact = document.getElementById("contactatorder").value) {
+                element.name = document.getElementById("nameatorder").value;
+                element.age = document.getElementById("ageatorder").value;
+                element.address = document.getElementById("addressatorder").value;
+                element.order = order.length+1
+            }
+        })
+    }
+
+    order.push({
+        orderID : order.length+1,
+        customer : document.getElementById("contactatorder").value ,
+        price : gettotal() ,
+        time : new Date().toISOString().split('T')[0]+ " : " + new Date().getHours() + ":" + new Date().getMinutes()
+    })
+
+    loadordertable()
+    loadcustomertable()
+    loadcart()
+    while(cart.length > 0) {
+        cart.pop();
+    }
+}
+
+function loadordertable(){
+    let ordertable = document.getElementById("ordertable");
+    let orderbody = `<thead>
+                        <tr>
+                            <th scope="col">OrderID</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
+    for (let i = 0; i < order.length; i++) {
+        orderbody += `<tr onclick = "addorderdetails(${i})" ondblclick = "removefromorder(${i})">
+                        <td>${order[i].orderID}</td>
+                        <td>${order[i].customer}</td>
+                        <td>${order[i].price}</td>
+                        <td>${order[i].time}</td>
+                    </tr>`
+    }
+    orderbody += `</tbody>`
+    ordertable.innerHTML = orderbody
+}
+
+function removefromorder(element){
+    order.splice(element,1)
+    loadordertable()
+}
+
+//customer management
+
 function addcustomer() {
     document.getElementById("addcustomerbtn").innerHTML = "Add Customer"
     if (customer.length == 0 || iscontactexist(document.getElementById("contact").value)) {
@@ -349,6 +405,7 @@ function loadcustomertable(){
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Address</th>
+                            <th scope="col">Order</th>
                         </tr>
                     </thead>
                     <tbody = "table-group-divider">`;
@@ -358,6 +415,7 @@ function loadcustomertable(){
                         <td>${customer[i].name}</td>
                         <td>${customer[i].age}</td>
                         <td>${customer[i].address}</td>
+                        <td>${customer[i].order == null ? `--` : customer[i].order}</td>
                     </tr>`
     }
     customerbody += `</tbody>`
@@ -370,63 +428,4 @@ function addcustomerdetails(element) {
     document.getElementById("name").value = customer[element].name
     document.getElementById("age").value = customer[element].age
     document.getElementById("address").value = customer[element].address
-}
-
-function loadordertable(){
-    let ordertable = document.getElementById("ordertable");
-    let orderbody = `<thead>
-                        <tr>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Address</th>
-                        </tr>
-                    </thead>
-                    <tbody = "table-group-divider">`;
-    for (let i = 0; i < order.length; i++) {
-        orderbody += `<tr onclick = "addorderdetails(${i})" ondblclick = "removefromorder(${i})">
-                        <td>${customer[i].contact}</td>
-                        <td>${customer[i].name}</td>
-                        <td>${customer[i].age}</td>
-                        <td>${customer[i].address}</td>
-                    </tr>`
-    }
-    orderbody += `</tbody>`
-    ordertable.innerHTML = orderbody
-}
-
-function removefromorder(element){
-    order.splice(element,1)
-    loadordertable()
-}
-
-console.log(new Date().toISOString().split('T')[0]+ " : " + new Date().getHours() + ":" + new Date().getMinutes());
-
-console.log(new Date().getTime().toFixed().split('T')[0]);
-
-function placeorder() {
-    if (customer.length == 0 || iscontactexist(document.getElementById("contactatorder").value)) {
-        customer.push({
-            contact : document.getElementById("contactatorder").value, 
-            name: document.getElementById("nameatorder").value, 
-            age : document.getElementById("ageatorder").value,
-            address : document.getElementById("addressatorder").value
-        })  
-    } else{
-        customer.forEach(element=>{
-            if (element.contact = document.getElementById("contactatorder").value) {
-                element.name = document.getElementById("nameatorder").value;
-                element.age = document.getElementById("ageatorder").value;
-                element.address = document.getElementById("addressatorder").value;
-            }
-        })
-    }
-
-    order.push({
-        orderID : order.length+1,
-        customer : document.getElementById("contactatorder").value ,
-        price : cart[cart.length-1].total
-    })
-
-    loadordertable()
 }
