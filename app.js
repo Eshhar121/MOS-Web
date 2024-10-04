@@ -49,7 +49,7 @@ const food = [
     {code:"B1044", name:"Pepsi (330ml)", price:990, discount:5},
     {code:"B1045", name:"Coca-Cola (330ml)", price:1230},
     {code:"B1046", name:"Sprite (330ml)", price:1500, discount:3},
-    {code:"B1047", name:"Mirinda (330ml)", price:850, discount:7},
+    {code:"B1047", name:"Mirinda (330ml)", price:850, discount:7}
 ]
 
 let table = document.getElementById("table");
@@ -304,22 +304,36 @@ function removefromcart(element) {
     carttable.innerHTML = cartt
     total.innerHTML = `total -: `+gettotal()+`LKR`;
 }
-
-function placeorder() {
-    addcustomer()
-}
-
 function addcustomer() {
-    if (customer.length == 0 || document.getElementById("contact").value != customer[customer.length-1].contact) {
+    document.getElementById("addcustomerbtn").innerHTML = "Add Customer"
+    if (customer.length == 0 || iscontactexist(document.getElementById("contact").value)) {
         customer.push({
             contact : document.getElementById("contact").value, 
             name: document.getElementById("name").value, 
             age : document.getElementById("age").value,
             address : document.getElementById("address").value
         })  
-    } 
+    } else{
+        customer.forEach(element=>{
+            if (element.contact = document.getElementById("contact").value) {
+                element.name = document.getElementById("name").value;
+                element.age = document.getElementById("age").value;
+                element.address = document.getElementById("address").value;
+            }
+        })
+    }
 
     loadcustomertable()
+}
+
+function iscontactexist(contact) {
+    let bool = true
+    customer.forEach(element=>{
+        if (element.contact = contact) {
+            bool = false
+        }
+    })
+    return bool
 }
 
 function removefromcustomer(element){
@@ -351,9 +365,68 @@ function loadcustomertable(){
 }
 
 function addcustomerdetails(element) {
-    document.getElementById("addcustomerbtn").innerHTML = ""
+    document.getElementById("addcustomerbtn").innerHTML = "Update Customer"
     document.getElementById("contact").value = customer[element].contact
     document.getElementById("name").value = customer[element].name
     document.getElementById("age").value = customer[element].age
     document.getElementById("address").value = customer[element].address
+}
+
+function loadordertable(){
+    let ordertable = document.getElementById("ordertable");
+    let orderbody = `<thead>
+                        <tr>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody = "table-group-divider">`;
+    for (let i = 0; i < order.length; i++) {
+        orderbody += `<tr onclick = "addorderdetails(${i})" ondblclick = "removefromorder(${i})">
+                        <td>${customer[i].contact}</td>
+                        <td>${customer[i].name}</td>
+                        <td>${customer[i].age}</td>
+                        <td>${customer[i].address}</td>
+                    </tr>`
+    }
+    orderbody += `</tbody>`
+    ordertable.innerHTML = orderbody
+}
+
+function removefromorder(element){
+    order.splice(element,1)
+    loadordertable()
+}
+
+console.log(new Date().toISOString().split('T')[0]+ " : " + new Date().getHours() + ":" + new Date().getMinutes());
+
+console.log(new Date().getTime().toFixed().split('T')[0]);
+
+function placeorder() {
+    if (customer.length == 0 || iscontactexist(document.getElementById("contactatorder").value)) {
+        customer.push({
+            contact : document.getElementById("contactatorder").value, 
+            name: document.getElementById("nameatorder").value, 
+            age : document.getElementById("ageatorder").value,
+            address : document.getElementById("addressatorder").value
+        })  
+    } else{
+        customer.forEach(element=>{
+            if (element.contact = document.getElementById("contactatorder").value) {
+                element.name = document.getElementById("nameatorder").value;
+                element.age = document.getElementById("ageatorder").value;
+                element.address = document.getElementById("addressatorder").value;
+            }
+        })
+    }
+
+    order.push({
+        orderID : order.length+1,
+        customer : document.getElementById("contactatorder").value ,
+        price : cart[cart.length-1].total
+    })
+
+    loadordertable()
 }
